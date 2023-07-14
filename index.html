@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="TW-zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GAS testing</title>
+	<script src="./main.js"></script>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<div id="content"></div>
+
+	<script>
+		const content = document.getElementById("content");
+		function getData() {
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbz0lLqo9mwrYgV61LCUXTiuL1iE7QPsnT0_y7YG0tMC7aJ4w7sZWp1kOdKPYYMM-wfd/exec';
+			fetch(scriptURL, { method: 'GET'})
+				.then((res) => {return res.text();})
+				.then((result) => {
+					const Drive = JSON.parse(result);
+					displayStruct(content, Drive.struct);
+					displayChildren(Drive.struct.children);
+				})
+				.catch((err) => console.log('err', err));
+		}
+		getData();
+	</script>
+</body>
+</html>
