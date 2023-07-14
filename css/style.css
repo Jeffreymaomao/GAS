@@ -1,12 +1,26 @@
 *{
 	position: relative;
 }
+
+.file{
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease;
+	width: auto;
+	margin-left: 50%;
+    transform: translateX(-50%);
+}
+.file.open {
+	overflow: scroll;
+	max-height: 400px;
+}
+
+
 .text{
 	white-space: pre;
-	max-height:500px;
-	overflow:scroll;
-	border: 1px solid black;
-	margin-left: 100px;
+	border: solid;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 html,body{
@@ -25,6 +39,7 @@ li {
 	white-space: nowrap;
 	position: relative;
 }
+
 .property{
 	border: solid 1px #ccc;
 	width: 100px;
@@ -40,12 +55,6 @@ li {
 	display: inline-block;
 	vertical-align: top;
 	overflow: scroll;
-}
-
-.file{
-	border: solid red ;
-	right: 0;
-	top: 0;
 }
 
 

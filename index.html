@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>GAS testing</title>
-	<script src="./main.js"></script>
-	<link rel="stylesheet" href="./style.css">
+	<script src="./js/main.js"></script>
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 	<div id="content"></div>
@@ -19,7 +19,7 @@
 				.then((result) => {
 					const Drive = JSON.parse(result);
 					displayStruct(content, Drive.struct);
-					displayChildren(Drive.struct.children);
+					displayChildren(scriptURL, Drive.struct.children);
 				})
 				.catch((err) => console.log('err', err));
 		}
