@@ -9,11 +9,10 @@
 </head>
 <body>
 	<div id="content"></div>
-
 	<script>
 		const content = document.getElementById("content");
 		function getData() {
-			const scriptURL = 'https://script.google.com/macros/s/AKfycbz0lLqo9mwrYgV61LCUXTiuL1iE7QPsnT0_y7YG0tMC7aJ4w7sZWp1kOdKPYYMM-wfd/exec';
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbwvHbjLWjEWYRp5zTeMN4N-q90CCt8MNq0LUILA6OtcgQusvRa3huQjR5CzVCA7LFKF/exec';
 			fetch(scriptURL, { method: 'GET'})
 				.then((res) => {return res.text();})
 				.then((result) => {
